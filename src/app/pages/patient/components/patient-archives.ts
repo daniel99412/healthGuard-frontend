@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { CardModule } from 'primeng/card';
 
 @Component({
     selector: 'app-patient-archives',
-    imports: [],
+    imports: [CardModule],
     template: `
-    <div class="card">
+    <p-card>
         Archivos
-    </div>
+    </p-card>
     `
     ,
     styles: [``],

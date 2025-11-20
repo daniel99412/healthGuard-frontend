@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { CardModule } from 'primeng/card';
 
 @Component({
     selector: 'app-patient-back',
-    imports: [],
+    imports: [CardModule],
     template: `
-    <div class="card">
+    <p-card>
         Antecedentes
-    </div>
+    </p-card>
     `,
     styles: [``],
     providers: []
