@@ -6,11 +6,12 @@ import { StyleClassModule } from 'primeng/styleclass';
 import { LayoutService } from '../service/layout.service';
 import { Profile } from './app.profile';
 import { AppConfigurator } from "./app.configurator";
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 
 @Component({
     selector: 'app-topbar',
     standalone: true,
-    imports: [RouterModule, CommonModule, StyleClassModule, Profile, AppConfigurator],
+    imports: [RouterModule, CommonModule, StyleClassModule, Profile, AppConfigurator, FontAwesomeModule],
     template: ` 
     <app-configurator />
     <app-profile [visible]="openProfile" (visibleChange)="openProfile = $event"></app-profile>
@@ -44,7 +45,12 @@ import { AppConfigurator } from "./app.configurator";
         <div class="layout-topbar-actions">
             <div class="layout-config-menu">
                 <button type="button" class="layout-topbar-action" (click)="toggleDarkMode()">
-                    <i [ngClass]="{ 'pi ': true, 'pi-moon': layoutService.isDarkTheme(), 'pi-sun': !layoutService.isDarkTheme() }"></i>
+                    @if (layoutService.isDarkTheme()) {
+                        <fa-icon icon="moon"></fa-icon>
+                    }
+                    @if(!layoutService.isDarkTheme()) {
+                        <fa-icon icon="sun"></fa-icon>
+                    }
                 </button>
             </div>
 
@@ -55,15 +61,15 @@ import { AppConfigurator } from "./app.configurator";
             <div class="layout-topbar-menu hidden lg:block">
                 <div class="layout-topbar-menu-content">
                     <button type="button" class="layout-topbar-action">
-                        <i class="pi pi-calendar"></i>
+                        <fa-icon icon="calendar-days"></fa-icon>
                         <span>Calendar</span>
                     </button>
                     <button type="button" class="layout-topbar-action">
-                        <i class="pi pi-inbox"></i>
+                        <fa-icon icon="inbox"></fa-icon>
                         <span>Messages</span>
                     </button>
                     <button type="button" class="layout-topbar-action" (click)="openProfile = true">
-                        <i class="pi pi-user"></i>
+                        <fa-icon icon="user"></fa-icon>
                         <span>Profile</span>
                     </button>
                 </div>
@@ -76,7 +82,6 @@ export class AppTopbar {
     openProfile = false;
 
     constructor(public layoutService: LayoutService) {
-        console.log(this.openProfile);
     }
 
     toggleDarkMode() {
