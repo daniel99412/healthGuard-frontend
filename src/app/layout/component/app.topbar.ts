@@ -12,10 +12,10 @@ import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
     selector: 'app-topbar',
     standalone: true,
     imports: [RouterModule, CommonModule, StyleClassModule, Profile, AppConfigurator, FontAwesomeModule],
-    template: ` 
+    template: `
     <app-configurator />
     <app-profile [visible]="openProfile" (visibleChange)="openProfile = $event"></app-profile>
-    <div class="layout-topbar">
+    <div class="layout-topbar !shadow-md dark:!shadow-slate-700">
         <div class="layout-topbar-logo-container">
             <button class="layout-menu-button layout-topbar-action" (click)="layoutService.onMenuToggle()">
                 <i class="pi pi-bars"></i>

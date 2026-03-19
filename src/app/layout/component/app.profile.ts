@@ -4,9 +4,10 @@ import { LayoutService } from '../service/layout.service';
 
 @Component({
     selector: 'app-profile',
+    standalone: true,
     imports: [DrawerModule],
     template: `
-    <p-drawer header="Profile" [(visible)]="visible" position="right" (onHide)="handleHide()">
+    <p-drawer header="Profile" [(visible)]="visible" position="right" (onHide)="handleHide()" styleClass="lg:!shadow-md dark:!shadow-slate-700 lg:!w-[30rem] lg:!h-[95%] lg:!mt-[1.5rem] lg:!rounded-l-lg" [modal]="false">
         Hola
     </p-drawer>
     `,
