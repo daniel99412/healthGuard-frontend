@@ -21,7 +21,8 @@ import { PAtientMedicine } from "./components/patient-medicines";
         <app-patient-appointment class="lg:col-start-3 lg:row-start-1"></app-patient-appointment>
     </div>
     `,
-    styles: [``],
+    styles: [''],
+    standalone: true,
     providers: []
 })
 

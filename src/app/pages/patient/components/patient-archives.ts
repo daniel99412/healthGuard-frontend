@@ -11,6 +11,7 @@ import { CardModule } from 'primeng/card';
     `
     ,
     styles: [``],
+    standalone: true,
     providers: []
 })
 

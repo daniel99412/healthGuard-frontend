@@ -10,6 +10,7 @@ import { CardModule } from 'primeng/card';
     </p-card>
     `,
     styles: [``],
+    standalone: true,
     providers: []
 })
 
